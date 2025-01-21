@@ -3,7 +3,11 @@
 const config = {
   mongodb: {
     // TODO Change (or review) the url to your MongoDB:
+<<<<<<< HEAD
     url: "mongodb://localhost:27017/SchoolSystem",
+=======
+    url: "mongodb://localhost:27017/SchoolManagementSystem",
+>>>>>>> 4bf36d3d0e8284800a4739ac463e052c9de59c02
   },
 
   // The migrations dir, can be an relative or absolute path. Only edit this when really necessary.
