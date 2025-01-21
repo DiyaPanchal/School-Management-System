@@ -1,10 +1,15 @@
 import express from "express";
 import "dotenv/config";
+import apiRouter from "./routes/api.js";
 
 
 const app = express();
-const port = process.env.PORT || 3003;
+const PORT = process.env.PORT || 3002;
 
-app.listen(PORT,() => {
-    console.log(`Server is running on port ${PORT}`);
+app.use("/", apiRouter);
+
+app.listen(PORT, () => {
+  console.log(`Server is listening at http://localhost:${PORT}`);
 });
+
+
