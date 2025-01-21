@@ -1,19 +1,15 @@
 import mongoose from "mongoose";
 
 const classSchema = new mongoose.Schema({
-  name: {
+  className: {
     type: String,
     required: true,
   },
-  capacity: {
-    type: Number,
-    required: false,
-  },
-  teacherId: {
+  assignedTeacher: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Teacher",
   },
-  students: [{ type: mongoose.Schema.Types.ObjectId, ref: "Student" },],
+  students: [{ type: mongoose.Schema.Types.ObjectId, ref: "Student" }],
 });
 
 const Class = mongoose.model("Class", classSchema);
