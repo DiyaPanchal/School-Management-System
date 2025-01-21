@@ -30,11 +30,15 @@ export const updateTeacher = async(req, res) =>{
     const {teacherId} = req.params;
     const {teacherName, subject, contactNumber} = req.body;
     try{
-        const updatedTeacher = await Teacher.findByIdAndUpdate(teacherId,{
+        const updatedTeacher = await Teacher.findByIdAndUpdate(
+          teacherId,
+          {
             teacherName,
             subject,
-            contactNumber
-        });
+            contactNumber,
+          },
+          { new: true }
+        );
         res.json(updatedTeacher);
     }
     catch(error){

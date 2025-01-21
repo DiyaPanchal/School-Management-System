@@ -5,7 +5,7 @@ import Class from "../../models/Class.js";
 
   export async function up () {
     const teacher = new Teacher({
-      name: 'Payal Nayak',
+      teacherName: 'Payal Nayak',
       subject: 'Mathematics',
       contactNumber: '1234567890'
     });
