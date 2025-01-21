@@ -14,7 +14,7 @@ export const getStudents = async (req, res) => {
   }
 };
 
-export const addStudents = async (req, res) => {
+export const addStudent = async (req, res) => {
   const { name, age, classId, parentDetails } = req.body;
   try {
     const newStudent = new Student({
@@ -35,7 +35,7 @@ export const addStudents = async (req, res) => {
   }
 };
 
-export const updateStudents = async (req, res) => {
+export const updateStudent = async (req, res) => {
   const { studentId } = req.params;
   const { name, age, classId, parentDetails } = req.body;
 
