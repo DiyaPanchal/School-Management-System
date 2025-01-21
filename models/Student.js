@@ -9,17 +9,14 @@ const studentSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  classId: {
+  class: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Class",
   },
-  fatherName: {
-    type: String,
-    required: true,
-  },
-  motherName: {
-    type: String,
-    required: true,
+  parentDetails: {
+    fatherName: { type: String },
+    motherName: { type: String },
+    contactNumber: { type: String },
   },
 });
 
