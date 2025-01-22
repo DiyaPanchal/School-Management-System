@@ -1,4 +1,4 @@
-import Teacher from "../models/Teacher";
+import Teacher from "../models/Teacher.js";
 
 const authMiddleware = async(req, res, next) => {
     const {teacherId} = req.body;

@@ -11,11 +11,11 @@ export const getTeachers = async (req, res) => {
 };
 
 export const addTeacher = async(req, res) => {
-    const {teacherName, subject, contactNumber} = req.body;
+    const {teacherName, subject, contactNumber,role} = req.body;
     const newTeacher = new Teacher({
         teacherName,
         subject,
-        contactNumber
+        contactNumber, role
     });
     try{
         await newTeacher.save();
