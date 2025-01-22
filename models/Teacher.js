@@ -9,7 +9,8 @@ const teacherSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  contactNumber: { type: String },
+  contactNumber: { type: Number },
+  role: { type: String, enum: ["user", "admin"], default: "user" },
 });
 
 const Teacher = mongoose.model("Teacher", teacherSchema);

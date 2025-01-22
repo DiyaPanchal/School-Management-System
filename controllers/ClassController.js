@@ -1,6 +1,4 @@
 import Class from "../models/Class.js";
-import Teacher from "../models/Teacher.js";
-import Student from "../models/Student.js";
 
 export const getClass = async (req, res) => {
   const { classId } = req.params;
