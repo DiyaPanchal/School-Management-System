@@ -1,6 +1,16 @@
+import mongoose from "mongoose";
 import Teacher from "../../models/Teacher.js";
 import Student from "../../models/Student.js";
 import Class from "../../models/Class.js";
+import User from "../../models/User.js";
+import bcrypt from "bcrypt";
+
+try {
+  await mongoose.connect("mongodb://localhost:27017/SchoolManagementSystem");
+  console.log("MongoDB Connected");
+} catch (error) {
+  console.error(`Error connecting to MongoDB: ${error}`);
+}
 
 export async function up() {
   const teacher = new Teacher({
@@ -30,10 +40,27 @@ export async function up() {
 
   classInfo.students.push(student._id);
   await classInfo.save();
+
+  const adminUser = new User({
+    username: "diya",
+    email: "admin@school.com",
+    password: "securePassword123",
+    role: "admin",
+  });
+  await adminUser.save();
+
+  const regularUser = new User({
+    username: "useer",
+    email: "user@school.com",
+    password: "userPassword456",
+    role: "user",
+  });
+  await regularUser.save();
 }
 
 export async function down() {
   await Student.deleteMany({});
   await Class.deleteMany({});
   await Teacher.deleteMany({});
+  await User.deleteMany({});
 }
