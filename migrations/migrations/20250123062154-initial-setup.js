@@ -6,7 +6,7 @@ import User from "../../models/User.js";
 import bcrypt from "bcrypt";
 
 try {
-  await mongoose.connect("mongodb://localhost:27017/");
+  await mongoose.connect("mongodb://localhost:27017/SchoolManagementSystem");
   console.log("MongoDB Connected");
 } catch (error) {
   console.error(`Error connecting to MongoDB: ${error}`);
